@@ -1,11 +1,13 @@
 const { Router} = require ("express")
 const userRouter = Router();
-const {createUser, listUser, deleteUser} = require("./controllers")
+const {createUser, listUser, deleteUser, editEmail} = require("./controllers")
 
-userRouter.post("/user", createUser)// http verb, path and controller    // taking create user from controlls
+userRouter.post("/", createUser)// http verb, path and controller    // taking create user from controlls
 
-userRouter.get("/user", listUser)
+userRouter.get("/", listUser)
 
-userRouter.delete("/user/:username", deleteUser)
+userRouter.delete("/:username", deleteUser)
+
+userRouter.put("/", editEmail)
 
 module.exports = userRouter;
